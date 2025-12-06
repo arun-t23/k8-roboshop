@@ -24,7 +24,7 @@ spec:
         component: mongodb
         tier: db
 
-  src:
+  spec:
     containers:
     - name: mongodb
       image: arunt98/mongodb:v1
