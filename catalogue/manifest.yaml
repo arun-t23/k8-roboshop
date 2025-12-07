@@ -17,21 +17,21 @@ metadata:
   labels: ## these are replicaset labels
     project: roboshop
     component: catalogue
-    tier: application
+    tier: backend
 spec:
   replicas: 3
   selector:
     matchLabels: ## these labels sre used to select the pods
       project: roboshop
       component: catalogue
-      tier: application
+      tier: backend
 ### pod definition
   template:
     metadata:
       labels:
         project: roboshop
         component: catalogue
-        tier: application
+        tier: backend
     spec:
       containers:
       - name: catalogue
@@ -39,7 +39,7 @@ spec:
         imagePullPolicy: Always
         envFrom:
         - configMapRef:
-          name: catalogue
+            name: catalogue
         ports:
         - name: liveness-port
           containerPort: 8080
