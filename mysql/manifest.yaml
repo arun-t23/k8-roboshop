@@ -25,7 +25,7 @@ spec:
     spec:
       containers:
       - name: mysql
-        image: mysql:8.0
+        image: arunt98/mysql:v1
         imagePullPolicy: Always
         readinessProbe:
           tcpSocket:
