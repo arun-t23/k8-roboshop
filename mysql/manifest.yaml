@@ -47,15 +47,16 @@ spec:
             port: 3306
           initialDelaySeconds: 15
           periodSeconds: 5
-        volumeMounts: ### using configmaps as volumemount
+        volumeMounts:
         - name: mysql-config
           mountPath: /etc/mysql/conf.d/my.cnf
           subPath: my.cnf
+
         ## using configmap as voumes at pod level
       volumes:
-      - name: mysql-config
-        ConfigMap:
-          name: mysql-config
+        - name: mysql-config
+          configMap:
+            name: mysql
 
 ---
 apiVersion: v1
