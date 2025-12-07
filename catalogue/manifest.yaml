@@ -3,18 +3,18 @@ kind: Deployment
 metadata:
   name: catalogue
   namespace: roboshop
-  labels:
+  labels: ## these are replicaset labels
     project: roboshop
     component: catalogue
     tier: application
 spec:
   replicas: 3
   selector:
-    matchLabels:
+    matchLabels: ## these labels sre used to select the pods
       project: roboshop
       component: catalogue
       tier: application
-
+### pod definition
   template:
     metadata:
       labels:
