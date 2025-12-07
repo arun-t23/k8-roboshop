@@ -29,12 +29,12 @@ spec:
         imagePullPolicy: Always
         readinessProbe:
           tcpSocket:
-            port: 27017
+            port: 3306
           initialDelaySeconds: 15
           periodSeconds: 10
         livenessProbe:
           tcpSocket:
-            port: 27017
+            port: 3306
           initialDelaySeconds: 15
           periodSeconds: 10
 
@@ -55,8 +55,8 @@ spec:
     tier: db
   ports:
     - protocol: TCP
-      port: 27017
-      targetPort: 27017
+      port: 3306
+      targetPort: 3306
     
 
   
