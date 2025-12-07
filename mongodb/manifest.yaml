@@ -28,6 +28,7 @@ spec:
       containers:
       - name: mongodb
         image: arunt98/mongodb:v1
+        imagePullPolicy: Always
         readinessProbe:
           tcpSocket:
             port: 27017
