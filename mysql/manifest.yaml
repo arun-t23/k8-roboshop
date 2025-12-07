@@ -1,3 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysql
+  namespace: roboshop
+data:
+  my.cnf: |
+    [mysqld]
+    innodb_redo_log_capacity = 2G
+
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -9,7 +19,7 @@ metadata:
     component: mysql
     tier: db
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       project: roboshop
@@ -37,6 +47,15 @@ spec:
             port: 3306
           initialDelaySeconds: 15
           periodSeconds: 5
+        volumeMounts: ### using configmaps as volumemount
+        - name: mysql-config
+          mountPath: /etc/mysql/conf.d/my.cnf
+          subPath: my.cnf
+        ## using configmap as voumes at pod level
+      volumes:
+      - name: mysql-config
+        ConfigMap:
+          name: mysql-config
 
 ---
 apiVersion: v1
