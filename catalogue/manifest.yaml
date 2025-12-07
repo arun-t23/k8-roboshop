@@ -34,9 +34,11 @@ spec:
         tier: application
     spec:
       containers:
-      imagePullPolicy: Always
-      envFrom:
-      - configMapRef:
+      - name: catalogue
+        image: arunt98/catalogue:v1
+        imagePullPolicy: Always
+        envFrom:
+        - configMapRef:
           name: catalogue
         ports:
         - name: liveness-port
