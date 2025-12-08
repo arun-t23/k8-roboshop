@@ -19,7 +19,7 @@ metadata:
     component: catalogue
     tier: backend
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels: ## these labels sre used to select the pods
       project: roboshop
