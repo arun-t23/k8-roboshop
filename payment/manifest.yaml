@@ -30,9 +30,10 @@ metadata:
 spec:
   replicas: 1
   selector:
-    project: roboshop
-    component: payment
-    tier: backend  
+    matchLabels:
+      project: roboshop
+      component: payment
+      tier: backend  
   template:
     metadata:
       labels:
