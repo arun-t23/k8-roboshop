@@ -48,21 +48,21 @@ spec:
         envFrom:
         - configMapRef:
             name: payment
-      ports:
-      - name: liveness-port
-        containerPort: 8080
-      readinessProbe:
-        httpGet:
-          path: /health
-          port: liveness-port
-        initialDelaySeconds: 10
-        periodSeconds: 15
-      livenessProbe:
-        httpGet:
-          path: /health
-          port: liveness-port
-        initialDelaySeconds: 15
-        periodSeconds: 20
+        ports:
+        - name: liveness-port
+          containerPort: 8080
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: liveness-port
+          initialDelaySeconds: 10
+          periodSeconds: 15
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: liveness-port
+          initialDelaySeconds: 15
+          periodSeconds: 20
 ---
 
 apiVersion: v1
