@@ -41,7 +41,7 @@ spec:
     spec:
       containers:
       - name: cart
-        image: arunt98/cart
+        image: arunt98/cart:v1
         imagePullPolicy: Always
         envFrom:
         - configMapRef:
