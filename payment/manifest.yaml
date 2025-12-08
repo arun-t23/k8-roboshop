@@ -45,9 +45,9 @@ spec:
       - name: payment
         image: arunt98/payment
         imagePullPolicy: Always
-      envFrom:
-      - configMapRef:
-          name: payment
+        envFrom:
+        - configMapRef:
+            name: payment
       ports:
       - name: liveness-port
         containerPort: 8080
