@@ -32,9 +32,9 @@ spec:
   template:
     metadata:
       labels:
-      project: roboshop
-      component: shipping
-      tier: backend
+        project: roboshop
+        component: shipping
+        tier: backend
     spec:
       containers:
       - name: shipping
