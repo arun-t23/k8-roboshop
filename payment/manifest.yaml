@@ -43,7 +43,7 @@ spec:
     spec:
       containers:
       - name: payment
-        image: arunt98/payment
+        image: arunt98/payment:v1
         imagePullPolicy: Always
         envFrom:
         - configMapRef:
