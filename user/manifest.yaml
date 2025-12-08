@@ -47,7 +47,7 @@ spec:
             name: user
         ports:
         - name: liveness-port
-          port: 8080
+          containerPort: 8080
         readinessProbe:
           httpGet:
             path: /health
@@ -58,8 +58,8 @@ spec:
           httpGet:
             path: /health
             port: liveness-port
-            initialDelaySeconds: 15
-            periodSeconds: 10
+          initialDelaySeconds: 15
+          periodSeconds: 10
 ---
 apiVersion: v1
 kind: Service
