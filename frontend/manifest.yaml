@@ -25,7 +25,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: frontend:v1
+        image: arunt98/frontend:v1
         imagePullPolicy: Always
         ports:
         - name: liveness-port
